@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+    <configuration>
+        <wildcard>false</wildcard>
+    </configuration>
+    <mapping>
+        <class-a>com.rh.demo.GasStorageData</class-a>
+        <class-b>eu.europa.acer.remit.remitstorageschema_v1.REMITStorageReport</class-b>
+        <field>
+            <a>acerCode</a>
+            <b>reportingEntityIdentifier.acerCode</b>
+        </field>
+        <field>
+            <a>startGas</a>
+            <b>storageFacilityReport.gasDayStart</b>
+        </field>
+        <field>
+            <a>endGas</a>
+            <b>storageFacilityReport.gasDayEnd</b>
+        </field>
+    </mapping>
+</mappings>
