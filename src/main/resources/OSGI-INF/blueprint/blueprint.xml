@@ -15,18 +15,18 @@
   <property name="password" value="test"/> 
 </bean> 
  <camelContext xmlns="http://camel.apache.org/schema/blueprint">
-  <endpoint uri="dozer:BeanToXML?sourceModel=com.rh.demo.GasStorageData&amp;targetModel=eu.europa.acer.remit.remitstorageschema_v1.REMITStorageReport&amp;marshalId=eueuropaacerremitremitstorageschema_v1&amp;mappingFile=transformation.xml" id="BeanToXML"/>
+  <endpoint uri="dozer:pojoToXML?sourceModel=com.rh.demo.GasStorageData&amp;targetModel=generated.GasReport&amp;marshalId=generated&amp;mappingFile=transformation.xml" id="pojoToXML"/>
   <dataFormats>
-    <jaxb contextPath="eu.europa.acer.remit.remitstorageschema_v1" id="eueuropaacerremitremitstorageschema_v1"/>
+    <jaxb contextPath="generated" id="generated"/>
   </dataFormats>
   <route id="restRoute">
     <from uri="cxfrs:bean:rsServer?bindingStyle=SimpleConsumer" id="InputWS">
       <description/>
     </from>
-    <to uri="sql:SELECT * FROM gasstoragedata where &quot;acercode&quot; = :#acercode;?runLoggingLevel=INFO&amp;outputClass=com.rh.demo.GasStorageData&amp;dataSource=pgDB&amp;outputType=SelectOne"/>
+    <to uri="sql:SELECT * FROM gasstoragedata where &quot;idcode&quot; = :#idcode;?runLoggingLevel=INFO&amp;outputClass=com.rh.demo.GasStorageData&amp;outputType=SelectOne&amp;dataSource=pgDB"/>
     <log message="Message:  - ${body}"/>
-    <to ref="BeanToXML" id="DozerMapper"/>
-    <to uri="file:/home/gbonocor/Demo/fuse/OutputDir?fileName=${date:now:yyyyMMddhhmmss}-output.xml&amp;exchangePattern=RobustInOnly" id="toXML"/>
+    <to ref="pojoToXML"/>
+    <to uri="file:/tmp?exchangePattern=RobustInOnly&amp;fileName=${date:now:yyyyMMddhhmmss}-output.xml" id="toXML"/>
   </route>
 </camelContext>
 

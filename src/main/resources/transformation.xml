@@ -5,18 +5,18 @@
     </configuration>
     <mapping>
         <class-a>com.rh.demo.GasStorageData</class-a>
-        <class-b>eu.europa.acer.remit.remitstorageschema_v1.REMITStorageReport</class-b>
+        <class-b>generated.GasReport</class-b>
         <field>
-            <a>acerCode</a>
-            <b>reportingEntityIdentifier.acerCode</b>
+            <a>endGas</a>
+            <b>gasDayEnd</b>
         </field>
         <field>
             <a>startGas</a>
-            <b>storageFacilityReport.gasDayStart</b>
+            <b>gasDayStart</b>
         </field>
         <field>
-            <a>endGas</a>
-            <b>storageFacilityReport.gasDayEnd</b>
+            <a>idCode</a>
+            <b>idCode</b>
         </field>
     </mapping>
 </mappings>

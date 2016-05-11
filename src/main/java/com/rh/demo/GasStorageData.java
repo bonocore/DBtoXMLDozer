@@ -4,14 +4,15 @@ import java.util.Date;
 
 public class GasStorageData {
 
-	private String acerCode;
+	private String idCode;
 	private Date startGas;
 	private Date endGas;
-	public String getAcerCode() {
-		return acerCode;
+	
+	public String getIdCode() {
+		return idCode;
 	}
-	public void setAcerCode(String acerCode) {
-		this.acerCode = acerCode;
+	public void setIdCode(String idCode) {
+		this.idCode = idCode;
 	}
 	public Date getStartGas() {
 		return startGas;

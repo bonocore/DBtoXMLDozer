@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<REMITStorageReport xmlns="http://www.acer.europa.eu/REMIT/REMITStorageSchema_V1.xsd">
-    <reportingEntityIdentifier>
-        <acerCode>A0002434C.IT</acerCode>
-    </reportingEntityIdentifier>
-    <submissionDateTime>2016-04-19T13:30:00.104+02:00</submissionDateTime>
-    <storageFacilityReport>
-        <gasDayStart>2016-04-18T06:00:00.000+02:00</gasDayStart>
-        <gasDayEnd>2016-04-19T05:59:59.000+02:00</gasDayEnd>
-        <reportingEntityReferenceID>33</reportingEntityReferenceID>
-        <storageType>DSR</storageType>
-        <storage>
-            <value>0</value>
-            <unit>TWh</unit>
-        </storage>
-        <injection>
-            <value>0</value>
-            <unit>GWh/d</unit>
-        </injection>
-        <withdrawal>
-            <value>0</value>
-            <unit>GWh/d</unit>
-        </withdrawal>
-    </storageFacilityReport>
-</REMITStorageReport>
+<GasReport>
+    <idCode>A0002434C.IT</idCode>
+    <gasDayStart>2016-04-18T06:00:00.000+02:00</gasDayStart>
+    <gasDayEnd>2016-04-19T05:59:59.000+02:00</gasDayEnd>
+</GasReport>
 

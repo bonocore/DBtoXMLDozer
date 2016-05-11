@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/gas")
 public interface GasService {
 	@GET
-    @Path("/retrieve/{acercode}")
+    @Path("/retrieve/{idcode}")
     @Produces(MediaType.TEXT_XML)
-    public String getAssets(@PathParam("acercode") String id);
+    public String getAssets(@PathParam("idcode") String id);
 }
